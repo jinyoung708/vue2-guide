@@ -49,7 +49,7 @@ import "jquery-touchswipe";
 
 export default {
     mounted(){
-        this.$addColorMode('dark');
+        this.$addColorMode('dark'); // 컬러 dark
         $('#test').swipe( {
             swipe:function(event, direction, distance, duration, fingerCount, fingerData) { // eslint-disable-line no-unused-vars
                 $('#testTxt').text('swipe ' + direction );  

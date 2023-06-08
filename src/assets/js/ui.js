@@ -1,5 +1,5 @@
 const methods = {
-    setListArray: (value) => {
+    _setListArray: (value) => {
         const target = document.querySelectorAll('.pub_section')
         for(var i=0; i<target.length; i++){
             const list = [];
@@ -46,7 +46,7 @@ const methods = {
 
 export default {
     install(Vue) {
-        Vue.prototype.$setListArray = methods.setListArray
+        Vue.prototype.$_setListArray = methods._setListArray
         Vue.prototype.$moveScroll = methods.moveScroll
         Vue.prototype.$scrollEvent = methods.scrollEvent
         Vue.prototype.$fsBtnClick = methods.fsBtnClick

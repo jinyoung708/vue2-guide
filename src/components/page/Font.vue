@@ -139,16 +139,13 @@
 
 <script>
 export default {
-    data(){
-        return {
-        }
-    },
     mounted() {
-        this.$addColorMode('dark');
-        this.$addFsMode('md');
+        this.$addColorMode('dark'); // 컬러 dark
+        this.$addFsMode('md'); // 폰트사이즈 md
+
         const targets = document.querySelectorAll('input');
         for (const target of targets) {
-            target.addEventListener('change', this.changeRadio);
+            target.addEventListener('change', this.changeRadio); // 라디오버튼 값 변경 시 changeRadio 실행
         }
     },
     methods: {

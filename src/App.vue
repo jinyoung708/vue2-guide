@@ -21,17 +21,16 @@ export default {
   },
   data(){
     return{
-      snbShow: true,
+      snbShow: true, // snb 노출 여부 체크
     }
   },
   methods: {
     snbToggle(event){
-      this.snbShow = event;
+      this.snbShow = event; // header 클릭 이벤트에 따라 snb 노출 여부 변경
     }
   }
 }
 </script>
 
-<style lang="scss">
-
+<style>
 </style>

@@ -13,31 +13,28 @@
 <script>
 export default {
     props: {
-        snbShow: Boolean
+        snbShow: Boolean // 부모에게 받은 데이터
     },
     data(){
         return {
-            width: 0,
+            width: 0, // 창 사이즈
         }
     },
     mounted(){
+        // 반응형 이벤트 추가
         window.addEventListener('resize', this.handleResize);
     },
     beforeDestroy(){
+        // 반응형 이벤트 제거
         window.removeEventListener('resize', this.handleResize);
     },
     methods: {
         snbToggle(){
-            this.$emit('snbToggle', !this.snbShow);
+            this.$emit('snbToggle', !this.snbShow); // 부모(App.vue)로 데이터 전달
         },
         handleResize() {
             this.width = window.innerWidth;
-            if(this.width <= 1700) {
-                this.$emit('snbToggle', false);
-            }
-            else {
-                this.$emit('snbToggle', true);
-            }
+            this.width <= 1700 ? this.$emit('snbToggle', false) : this.$emit('snbToggle', true);
             
         }
     }
