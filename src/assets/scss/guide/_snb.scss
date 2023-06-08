@@ -1,0 +1,81 @@
+/* SNB */
+.pub_snb {
+    position: fixed;
+    left: -250px;
+    top: 0;
+    z-index: 99;
+    width: 250px;
+    height: 100%;
+    padding: 110px 0 30px;
+    box-sizing: border-box;
+    border-right: 1px solid #21262d;
+    background: #0d1117;
+    overflow: auto;
+    transition: 0.5s;
+    &::after {
+        content: "ⓒ 2023. RADCNS";
+        width: 100%;
+        position: absolute;
+        left: 0;
+        bottom: 10px;
+        font-size: 10px;
+        font-weight: 400;
+        text-align: center;
+    }
+    &.on {
+        left: 0;
+    }
+    ul {
+        li {
+            margin-bottom: 20px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+            a {
+                display: inline-block;
+                padding: 0 30px;
+                font-size: 14px;
+                color: rgb(255, 255, 255, 0.5);
+                transition: 0.5s;
+                &:hover {
+                    font-weight: 500;
+                    color: #fff;
+                }
+            }
+            a {
+                &.router-link-exact-active {
+                    font-weight: 500;
+                    color: #fff;
+                }
+            }
+            &.off {
+                a {
+                    color: #ccc;
+                    pointer-events: none;
+                }
+            }
+        }
+    }
+    ol {
+        display: none;
+        border-bottom: 1px solid #30363d;
+        li {
+            &.on {
+                a {
+                    text-decoration: underline;
+                }
+            }
+            a {
+                display: block;
+                padding: 15px 30px;
+                font-size: 16px;
+            }
+        }
+    }
+    .addedEmoji {
+        display: inline-block;
+        width: 20px;
+        text-align: center;
+        margin-right: 7px;
+    }
+}

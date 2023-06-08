@@ -1,0 +1,103 @@
+/* GNB */
+.pub_header {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+    padding: 0 30px 0 60px;
+    box-sizing: border-box;
+    background: #161b22;
+    &::after {
+        content: "";
+        display: block;
+        clear: both;
+    }
+    h1 {
+        float: left;
+        font-size: 17px;
+        color: #fff;
+        line-height: 60px;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-weight: 500;
+    }
+}
+.pub_gnb {
+    float: right;
+    ul {
+        &:after {
+            content: "";
+            display: block;
+            clear: both;
+        }
+        li {
+            height: 60px;
+            position: relative;
+            float: left;
+            margin-left: 30px;
+            line-height: 60px;
+            &:first-child {
+                margin-left: 0;
+            }
+            a {
+                font-size: 16px;
+                color: rgb(255, 255, 255, 0.5);
+            }
+            &.on a, &:hover a {
+                font-weight: 500;
+                color: #fff;
+                transition: 0.5s;
+            }
+        }
+    }
+}
+
+/* Menu Trigger */
+.pub_toggle {
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    transform: translateY(-50%);
+    .menuTrigger {
+        position: relative;
+        width: 20px;
+        height: 20px;
+        position: relative;
+        cursor: pointer;
+        span {
+            width: 20px;
+            height: 1px;
+            position: absolute;
+            left: 50%;
+            margin-left: -10px;
+            background-color: #fff;
+            &:nth-of-type(1) {
+                top: 50%;
+                margin-top: -4px;
+            }
+            &:nth-of-type(2) {
+                top: 50%;
+                margin-top: 4px;
+            }
+        }
+        &.on {
+            span {
+                &:nth-of-type(1) {
+                    margin-top: 0;
+                    transform: rotate(45deg);
+                }
+                &:nth-of-type(2) {
+                    margin-top: 0;
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+    }
+    .menuTrigger, .menuTrigger span {
+        display: block;
+        box-sizing: border-box;
+        transition: .2s;
+    }
+}
