@@ -457,7 +457,7 @@ export default {
     mounted(){
         this.$addColorMode('dark'); // 컬러 dark
         this.$addFsMode('md'); // 폰트사이즈 md
-    }
+    },
 }
 </script>
 

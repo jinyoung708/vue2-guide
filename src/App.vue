@@ -28,7 +28,13 @@ export default {
     snbToggle(event){
       this.snbShow = event; // header 클릭 이벤트에 따라 snb 노출 여부 변경
     }
-  }
+  },
+  watch: {
+    $route(){
+      // body attribute 초기화
+      document.querySelector('body').removeAttribute('data-color-mode', 'data-fs-mode');
+    }
+  },
 }
 </script>
 
