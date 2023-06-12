@@ -1,8 +1,15 @@
 <template>
   <div id="app" class="pub">
+    <!-- Header 컴포넌트 -->
     <Header :snbShow=snbShow @snbToggle="snbToggle($event)"></Header>
+
+		<!-- Snb 컴포넌트 -->
     <Snb :snbShow=snbShow></Snb>
+
+		<!-- PubIndex 컴포넌트 -->
     <PubIndex></PubIndex>
+
+		<!-- router 호출 -->
     <router-view></router-view>
   </div>
 </template>

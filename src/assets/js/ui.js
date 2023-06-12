@@ -1,3 +1,15 @@
+const lottieList = {
+    lottie_accomplished : require('@/assets/images/lottie/lottie_accomplished.json'),
+    lottie_emoji_love: require('@/assets/images/lottie/lottie_emoji_love.json'),
+    lottie_emoji_yep: require('@/assets/images/lottie/lottie_emoji_yep.json'),
+    lottie_emoji_no: require('@/assets/images/lottie/lottie_emoji_no.json'),
+    lottie_emoji_angry: require('@/assets/images/lottie/lottie_emoji_angry.json'),
+    lottie_emoji_sad: require('@/assets/images/lottie/lottie_emoji_sad.json'),
+    lottie_fav: require('@/assets/images/lottie/lottie_fav.json'),
+    lottie_clap: require('@/assets/images/lottie/lottie_clap.json'),
+    lottie_rising_stars: require('@/assets/images/lottie/lottie_rising_stars.json'),
+}
+
 const methods = {
     _setListArray: (value) => {
         const target = document.querySelectorAll('.pub_section')
@@ -41,7 +53,40 @@ const methods = {
     },
     addFsMode: (value) => {
         document.querySelector('body').setAttribute('data-fs-mode', value);
-    }
+    },
+    _setlottieLoad: () => {
+        const target = document.querySelectorAll('lottie-player');
+        for(var i=0; i<target.length; i++){
+            target[i].addEventListener('rendered', (e) => {
+                var data = methods.lottieType(e.target.className);
+                e.target.load(data);
+            });
+        }
+    },
+    lottieType: (value) => {
+        switch(value){
+            case 'lottie_accomplished':
+                return lottieList.lottie_accomplished;
+            case 'lottie_emoji_love':
+                return lottieList.lottie_emoji_love;
+            case 'lottie_emoji_yep':
+                return lottieList.lottie_emoji_yep;
+            case 'lottie_emoji_no':
+                return lottieList.lottie_emoji_no;
+            case 'lottie_emoji_angry':
+                return lottieList.lottie_emoji_angry;
+            case 'lottie_emoji_sad':
+                return lottieList.lottie_emoji_sad;
+            case 'lottie_fav':
+                return lottieList.lottie_fav;
+            case 'lottie_clap':
+                return lottieList.lottie_clap;
+            case 'lottie_rising_stars':
+                return lottieList.lottie_rising_stars;
+            default:
+                break;
+        }
+    },
 }
 
 export default {
@@ -52,5 +97,6 @@ export default {
         Vue.prototype.$fsBtnClick = methods.fsBtnClick
         Vue.prototype.$addColorMode = methods.addColorMode
         Vue.prototype.$addFsMode = methods.addFsMode
+        Vue.prototype.$_setlottieLoad = methods._setlottieLoad
     }
 }

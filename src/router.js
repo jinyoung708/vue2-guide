@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router'
 
+// 페이지 컴포넌트 선언
 import Guide from './components/page/Guide.vue'
 import Css from './components/page/Css.vue'
 import Color from './components/page/Color.vue'
@@ -18,6 +19,7 @@ import Lottie from './components/page/Lottie.vue'
 
 Vue.use(VueRouter);
 
+// 경로와 컴포넌트 연결
 const routes = [
     {
         path: "/",

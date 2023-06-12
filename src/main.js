@@ -11,11 +11,16 @@ import common from '@/assets/js/ui';
 import '@/assets/scss/style.scss' 
 import '@/assets/scss/guide/_reset.scss'
 
-// 플러그인 연결
-import '@/plugins/highlight'
+// highlight
+import VueHighlightJS from 'vue-highlightjs'
+import 'highlight.js/styles/github-dark.css' // 테마 css 파일 연결
+
+// lottie
+import "@lottiefiles/lottie-player";
 
 Vue.config.productionTip = false
 Vue.use(common)
+Vue.use(VueHighlightJS)
 
 new Vue({  
   render: h => h(App),

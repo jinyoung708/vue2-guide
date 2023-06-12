@@ -195,7 +195,7 @@
                                                 </div>
                                                 <div class="comment__cont">
                                                     <div class="comment__emoji">
-                                                        <lottie-player src="@/assets/images/lottie/lottie_emoji_love.json" background="transparent"  speed="1" loop autoplay></lottie-player>
+                                                        <lottie-player class="lottie_emoji_love" background="transparent"  speed="1" loop autoplay></lottie-player>
                                                     </div>
                                                     <div class="comment__txt js-limitLine">lottie 이모지</div>
                                                 </div>
@@ -248,7 +248,7 @@
                                                         <span class="comment__tag">#태그</span>
                                                     </div>
                                                     <div class="comment__emoji">
-                                                        <lottie-player src="@/assets/images/lottie/lottie_emoji_love.json" background="transparent"  speed="1" loop autoplay></lottie-player>
+                                                        <lottie-player class="lottie_emoji_love" background="transparent"  speed="1" loop autoplay></lottie-player>
                                                     </div>
                                                     <div class="comment__txt js-limitLine">태그 + 이모지</div>
                                                 </div>
@@ -568,7 +568,7 @@
                                                 </div>
                                                 <div class="comment__cont">
                                                     <div class="comment__emoji">
-                                                        <lottie-player src="@/assets/images/lottie/lottie_emoji_love.json" background="transparent"  speed="1" loop autoplay></lottie-player>
+                                                        <lottie-player class="lottie_emoji_love" background="transparent"  speed="1" loop autoplay></lottie-player>
                                                     </div>
                                                     <div class="comment__txt js-limitLine">lottie 이모지</div>
                                                 </div>
@@ -621,7 +621,7 @@
                                                         <span class="comment__tag">#태그</span>
                                                     </div>
                                                     <div class="comment__emoji">
-                                                        <lottie-player src="@/assets/images/lottie/lottie_emoji_love.json" background="transparent"  speed="1" loop autoplay></lottie-player>
+                                                        <lottie-player class="lottie_emoji_love" background="transparent"  speed="1" loop autoplay></lottie-player>
                                                     </div>
                                                     <div class="comment__txt js-limitLine">태그 + 이모지</div>
                                                 </div>
@@ -752,10 +752,7 @@
 </template>
 
 <script>
-import Vue from 'vue'
 import FsTest from '@/components/elements/FsTest.vue'
-import LottieVuePlayer from "@lottiefiles/vue-lottie-player";
-Vue.use(LottieVuePlayer);
 
 export default {
     components: {
@@ -765,6 +762,7 @@ export default {
         this.$addColorMode('dark'); // 컬러 dark
         this.$addFsMode('md'); // 폰트사이즈 md
         this._setCommentColor(); // _setCommentColor 함수 실행
+        this.$_setlottieLoad(); // Lottie 애니메이션
     },
     methods: {
         _setCommentColor() {
@@ -778,7 +776,7 @@ export default {
                 value.classList.add(colorClass[i]);
                 i++;
             });
-        }
+        },
     }
 }
 </script>
