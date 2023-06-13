@@ -54,7 +54,7 @@ const methods = {
     addFsMode: (value) => {
         document.querySelector('body').setAttribute('data-fs-mode', value);
     },
-    _setlottieLoad: () => {
+    _setLottieLoad: () => {
         const target = document.querySelectorAll('lottie-player');
         for(var i=0; i<target.length; i++){
             target[i].addEventListener('rendered', (e) => {
@@ -97,6 +97,6 @@ export default {
         Vue.prototype.$fsBtnClick = methods.fsBtnClick
         Vue.prototype.$addColorMode = methods.addColorMode
         Vue.prototype.$addFsMode = methods.addFsMode
-        Vue.prototype.$_setlottieLoad = methods._setlottieLoad
+        Vue.prototype.$_setlottieLoad = methods._setLottieLoad
     }
 }

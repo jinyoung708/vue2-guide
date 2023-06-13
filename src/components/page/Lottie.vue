@@ -92,7 +92,7 @@ export default {
     mounted(){
         this.$addColorMode('dark'); // 컬러 dark
         this.$addFsMode('md'); // 폰트사이즈 md
-        this.$_setlottieLoad(); // Lottie 애니메이션
+        this.$_setLottieLoad(); // Lottie 애니메이션
     },
 }
 </script>

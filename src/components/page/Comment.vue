@@ -762,7 +762,7 @@ export default {
         this.$addColorMode('dark'); // 컬러 dark
         this.$addFsMode('md'); // 폰트사이즈 md
         this._setCommentColor(); // _setCommentColor 함수 실행
-        this.$_setlottieLoad(); // Lottie 애니메이션
+        this.$_setLottieLoad(); // Lottie 애니메이션
     },
     methods: {
         _setCommentColor() {
